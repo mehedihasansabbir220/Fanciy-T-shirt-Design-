@@ -1,0 +1,39 @@
+@import url(//fonts.googleapis.com/css?family=Lato);
+
+body {
+  font-family: "Lato";
+  height: fit-content;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fpd-container > .fpd-main-wrapper {
+  background-color: white !important;
+}
+
+.fpd-views-wrapper .fpd-views-selection {
+  display: none;
+}
+
+#main-container {
+  height: 100% !important;
+}
+#clothing-designer {
+  height: 100% !important;
+}
+/* 
+.fpd-product-stage {
+  height: 100% !important;
+}
+.fpd-view-stage {
+  height: 100% !important;
+} */

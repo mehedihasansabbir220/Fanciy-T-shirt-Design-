@@ -1,0 +1,83 @@
+{
+  "id": "design-templates",
+  "catalogs": [
+    {
+      "id": 1,
+      "name": "Men's T-shirts",
+      "slug": "mens-t-shirts",
+      "productCount": 20,
+      "icon": "/assets/images/category/icons/man.png",
+      "tags": ["men", "t-shirt"],
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/man.jpg",
+        "original": "/assets/images/category/man.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Women's T-shirts",
+      "slug": "womens-t-shirts",
+      "productCount": 20,
+      "icon": "/assets/images/category/icons/woman.png",
+      "tags": ["women", "t-shirt"],
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/woman.jpg",
+        "original": "/assets/images/category/woman.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Men's Hoodies",
+      "slug": "mens-hoodies",
+      "productCount": 20,
+      "icon": "/assets/images/category/icons/man.png",
+      "tags": ["men", "hoodies"],
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/man.jpg",
+        "original": "/assets/images/category/man.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Women's Hoodies",
+      "slug": "womens-hoodies",
+      "productCount": 20,
+      "icon": "/assets/images/category/icons/woman.png",
+      "tags": ["women", "hoodies"],
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/woman.jpg",
+        "original": "/assets/images/category/woman.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Men's Sweatshirt",
+      "slug": "mens-sweatshirt",
+      "productCount": 20,
+      "icon": "/assets/images/category/icons/man.png",
+      "tags": ["men", "sweatshirt"],
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/man.jpg",
+        "original": "/assets/images/category/man.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Women's Sweatshirt",
+      "slug": "womens-sweatshirt",
+      "productCount": 20,
+      "icon": "/assets/images/category/icons/woman.png",
+      "tags": ["women", "sweatshirt"],
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/woman.jpg",
+        "original": "/assets/images/category/woman.jpg"
+      }
+    }
+  ]
+}

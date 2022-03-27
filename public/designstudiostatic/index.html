@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fancy Product Designer</title>
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <!-- The CSS for the plugin itself - required -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/FancyProductDesigner-all.min.css"
+    />
+
+    <!-- Include required jQuery files -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+
+    <!-- HTML5 canvas library - required -->
+    <script src="js/fabric.min.js" type="text/javascript"></script>
+    <!-- The plugin itself - required -->
+    <script
+      src="js/FancyProductDesigner-all.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        const imageSize = 1024;
+        const targetSize = 600;
+        const scale = targetSize / imageSize;
+
+        const stageWidth = imageSize * scale;
+        const stageHeight = imageSize * scale;
+
+        const boundingBoxWidth = 200 * 1.4;
+        const boundingBoxHeight = 300 * 1.4;
+
+        var $yourDesigner = $("#clothing-designer"),
+          pluginOpts = {
+            uiTheme: "doyle",
+            // productsJSON: "json/products_categories.json", //see JSON folder for products sorted in categories
+            // designsJSON: "json/designs.json", //see JSON folder for designs sorted in categories
+            stageWidth: 600,
+            stageHeight: 600,
+            editorMode: true,
+            smartGuides: true,
+            fonts: [
+              { name: "Helvetica" },
+              { name: "Times New Roman" },
+              { name: "Pacifico", url: "Enter_URL_To_Pacifico_TTF" },
+              { name: "Arial" },
+              { name: "Lobster", url: "google" },
+            ],
+            customTextParameters: {
+              colors: true,
+              removable: true,
+              resizable: true,
+              draggable: true,
+              rotatable: true,
+              autoCenter: true,
+              curvable: true,
+            },
+            customImageParameters: {
+              draggable: true,
+              removable: true,
+              resizable: true,
+              rotatable: true,
+              colors: "#000",
+              autoCenter: true,
+            },
+            elementParameters: {
+              boundingBox: {
+                x: stageWidth / 2 - boundingBoxWidth / 2,
+                y: stageHeight / 2 - boundingBoxHeight / 2,
+                width: boundingBoxWidth,
+                height: boundingBoxHeight,
+              },
+            },
+            mainBarModules: ["images", "text", "manage-layers"],
+            actions: {
+              top: ["undo", "redo", "previous-view", "next-view"],
+              right: ["snap", "reset-product"],
+              bottom: [],
+              left: ["save", "load", "download", "preview-lightbox"],
+            },
+          },
+          yourDesigner = new FancyProductDesigner($yourDesigner, pluginOpts);
+
+        window.designer = yourDesigner;
+
+        window.designerFunctions = {
+          isReady: () => false,
+        };
+        $yourDesigner.on("ready", function (evt, price, currentPrice) {
+          window.designerFunctions.isReady = () => true;
+        });
+
+        // //print button
+        // $("#print-button").click(function () {
+        //   yourDesigner.print();
+        //   return false;
+        // });
+
+        // //create an image
+        // $("#image-button").click(function () {
+        //   var image = yourDesigner.createImage();
+        //   return false;
+        // });
+
+        // //checkout button with getProduct()
+        // $("#checkout-button").click(function () {
+        //   var product = yourDesigner.getProduct();
+        //   console.log(product);
+        //   return false;
+        // });
+
+        // //event handler when the price is changing
+        // $yourDesigner.on("priceChange", function (evt, price, currentPrice) {
+        //   $("#thsirt-price").text(currentPrice);
+        // });
+
+        // //save image on webserver
+        // $("#save-image-php").click(function () {
+        //   yourDesigner.getProductDataURL(function (dataURL) {
+        //     $.post("php/save_image.php", { base64_image: dataURL });
+        //   });
+        // });
+
+        // //send image via mail
+        // $("#send-image-mail-php").click(function () {
+        //   yourDesigner.getProductDataURL(function (dataURL) {
+        //     $.post("php/send_image_via_mail.php", { base64_image: dataURL });
+        //   });
+        // });
+      });
+
+      window.addEventListener("load", function () {
+        let message = {
+          height: document.body.scrollHeight,
+          width: document.body.scrollWidth,
+        };
+
+        console.log("sending message:", document.body.scrollHeight);
+
+        // window.top refers to parent window
+        window.top.postMessage(message, "*");
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="main-container">
+      <!-- <div
+        id="clothing-designer"
+        class="
+          fpd-container
+          fpd-shadow-2
+          fpd-topbar
+          fpd-tabs
+          fpd-tabs-side
+          fpd-top-actions-centered
+          fpd-bottom-actions-centered
+        "
+      ></div> -->
+
+      <div
+        id="clothing-designer"
+        class="
+          fpd-container
+          fpd-tabs
+          fpd-tabs-side
+          fpd-top-actions-centered
+          fpd-bottom-actions-centered
+          fpd-sidebar
+          fpd-sidebar-right
+        "
+      ></div>
+    </div>
+  </body>
+</html>
